@@ -37,9 +37,19 @@ input, button, textarea {
     --link-color: #000;
     --link-hover: hsla(0, 0%, 0%, 0.6);
     --link-active: orange;
+    --header-bgcolor: #000;
+    --header-color: white;
+    --nav-bgcolor: white;
 
     /* Borders */
     --borders: 1px solid var(--border-color);
+
+    /* Standard Padding */
+    --padding-tb: 0.25em;
+    --padding-side: 2.5%;
+
+    /* Standard Margin */
+    --margin: clamp(1em, 2.5vh, 1.5em) 0;
 }
 
 /* Utility Classes */
@@ -103,4 +113,34 @@ a:hover, a:focus-visible {
 
 a:active {
     color: var(--link-active);
+}
+
+/* Header */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header__h1 {
+    text-align: center;
+    background-color: var(--header-bgcolor);
+    color: var(--header-color);
+    padding: var(--padding-tb) var(--pading-side);
+}
+
+.header__nav {
+    background-color: var(--nav-bgcolor);
+    border-bottom: var(--borders);
+    font-weight: bold;
+    box-shadow: 0 6px 5px -5px var(--border-color);
+}
+
+.header__ul {
+    padding: var(--padding-tb) var(--pading-side);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
 }
